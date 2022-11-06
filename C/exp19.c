@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int s[100][100],i,j,n,m,k,a[100],temp;
+	scanf("%d%d",&m,&n);
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&s[i][j]);
+		}
+	}
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d ",s[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+	k=0;
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			a[k]=s[i][j];
+			k++;
+		}
+	}
+	for(i=0;i<k;i++)
+	{
+		for(j=0;j<k;j++)
+		{
+			if(a[i]<a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	printf("\n");
+	k=0;
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			s[i][j]=a[k];
+			k++;
+		}
+	}
+	printf("ascending array\n");
+	for(i=0;i<m;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d ",s[i][j]);
+		}
+		printf("\n");
+	}
+}

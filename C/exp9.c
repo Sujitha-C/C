@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int n,s[100],a[100],k,i,j,temp,ans,c,p,b[100];
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&s[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+	  for(j=0;j<n;j++)
+	  {
+	  	if(s[i]<s[j])
+	  	{
+	  		temp=s[i];
+	  		s[i]=s[j];
+	  		s[j]=temp;
+		  }
+	  }
+    }
+   	printf("the ans is...");
+    for(i=0;i<n;i++)
+    {
+    	c=1;
+        for(j=0;j<n;j++)
+        {
+           if(s[i]==s[j])
+           {
+			    if(c>1)
+			   {
+			   	s[j]=0;
+			   }
+			  c++;
+		   }
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		if(s[i]!=0)
+		printf("%d",s[i]);
+	}
+}
